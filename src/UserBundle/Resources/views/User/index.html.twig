@@ -1,0 +1,28 @@
+{% extends 'ProyectUser.html.twig'%}
+{% block body %}
+<table id="tableUser">
+	<tr>
+		<td>ID</td>
+		<td>Name</td>
+		<td>Cedula</td>
+		<td>Role</td>
+		<td>Update</td>
+		<td>Accion</td>
+	</tr>
+	{% for user in users %}
+		<tr>
+			<td>{{user.id}}</td>
+			<td>{{user.username}}</td>
+			<td>{{user.cedula}}</td>
+			<td>{{user.role}}</td>
+			<td>{{user.createdAt|date('d-m-y H:i')}}</td>
+			<td>
+			    <a href="#">View</a>
+			    <a href="#">Edit</a>
+			    <a href="#">Delete</a>
+			</td>
+		</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}
